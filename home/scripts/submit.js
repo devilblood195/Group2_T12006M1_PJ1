@@ -1,26 +1,32 @@
-function feedback() {
-    var name_value = document.getElementsByName('name').value;
-    var mail_value = document.getElementsByName('mail').value;
-    var age_value = document.getElementsByName('age').value;
-    var phone_value = document.getElementsByName('phone').value;
-    alert('Feedback Sending Successfully!');
-}
-
 function contactus() {
-    var first_name_value = document.getElementsByName('fname').value;
-    var last_name_value = document.getElementsByName('lname').value;
-    var mail_value = document.getElementsByName('mail').value;
-    var subject_value = document.getElementsByName('subject').value;
-    var message_value = document.getElementsByName('message').value;
+    var first_name_value = document.getElementById('fname').value;
+    var last_name_value = document.getElementById('lname').value;
+    var mail_value = document.getElementById('mail').value;
+    var subject_value = document.getElementById('subject').value;
+    var message_value = document.getElementById('message').value;
     alert('Message Sending Successfully!');
 }
 
+function feedback() {
+    var name_value = document.getElementById('name').value;
+    var mail_value = document.getElementById('mail').value;
+    var age_value = document.getElementById('age').value;
+    var phone_value = document.getElementById('phone').value;
+    alert('Feedback Sending Successfully!');
+}
+
 function ticket() {
-    var fullname_value = document.getElementsByName('fullname').value;
-    var mail_value = document.getElementsByName('mail').value;
-    var phone_value = document.getElementsByName('phone').value;
-    var date_value = document.getElementsByName('date').value;
-    var amount_value = document.getElementsByName('amount').value;
-    var price_value = document.getElementsByName('price').value;
+    var fullname_value = document.getElementById('fullname').value;
+    var mail_value = document.getElementById('mail').value;
+    var phone_value = document.getElementById('phone').value;
+    var amount_value = document.getElementById('amount').value;
+    var price_value = document.getElementById('price').value;
+    var date_value = document.getElementById('date').value;
+    var date_value1 = new Date(date_value);
+    var today = new Date();
+    if (date_value1 < today) {
+        alert('The date of visit must be greater than to the current date');
+        return;
+    }
     alert('You Successfully Purchased Ticket. Thanks!');
 }
