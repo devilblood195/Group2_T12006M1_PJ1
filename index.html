@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Aquarium - Buy Ticket</title>
+    <!-------------------- CSS -------------------->
+    <link rel="stylesheet" href="../styles/ticket.css">
+    <link rel="stylesheet" href="../styles/all.css">
+    <link rel="stylesheet" href="../styles/scroll_to_top.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-------------------- Panel Top -------------------->
+    <div class="nav-top">
+        <div class="clock">Opening time: 8AM to 5PM</div>
+        <div class="top-nav">
+            <ul>
+                <li class="mem"><a href="">MEMBERSHIP</a></li>
+                <li class="give"><a href="">GIVE TODAY</a></li>
+                <li class="cons"><a href="">CONSERVATION</a></li>
+                <li class="tick-top">
+                    <a href="../ticket"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <!-------------------- Navigation Bar -------------------->
+    <header>
+        <a href="../" class="logo"><img src="../images/home/logo.png" alt="logo">
+            <p>AQUARIUM NEXUS</p>
+        </a>
+        <div class="menu-toggle"></div>
+        <div class="search">
+            <button class="search-toggle" id="btn-toggle"><a>
+        <i class="fa fa-search-plus" aria-hidden="true"></i></a>
+    </button>
+        </div>
+        <div class="ticket"><a href="../ticket">Ticket</a></div>
+        <nav class="menu">
+            <ul>
+                <li class="about"><a href="../about">About Us</a></li>
+                <li class="event"><a href="../event">Event</a></li>
+                <li class="gallery" class="active"><a href="../gallery">Gallery</a></li>
+                <li class="feed"><a href="../feedback">Feedback</a></li>
+            </ul>
+        </nav>
+        <div class="clearfix"></div>
+    </header>
+
+    <!-------------------- Search -------------------->
+    <div class="sear-toggle" id="sear-toggle" style="display: none;">
+        <input type="text" name="search" class="inp-search" title="1231312321" style="font-size: 15px;" placeholder="Search animals, event and more.">
+        <button type="button" class="btn-search"><i class="fa fa-search-plus" aria-hidden="true"></i></i></button>
+        <div class="clearfix"></div>
+    </div>
+
+    <!-------------------- Ticket -------------------->
+    <div class="H_ticket">
+        <div class="H_tieude">
+            <p>Booking</p>
+            <p>Welcome to Aquarium Nexus</p>
+        </div>
+        <div class="H_form">
+            <form class="H_booking" onsubmit="ticket()">
+                <div class="H_name">
+                    <p>Full name:</p>
+                    <input type="text" name="fullname" id="name" class="H_inpname" onkeyup="buy()" pattern="^[A-Z a-z]{2,}$" required placeholder="Input word only..." title="Your full name: greater than 2 character...">
+                </div>
+                <div class="H_mail">
+                    <p>Email:</p>
+                    <input type="email" name="mail" id="mail" class="H_inpmail" onkeyup="buy()" pattern="^\w+@\w+\.[a-z]{2,3}$" required placeholder="Input your email: xxxx@xxx.xxx" title="Email: xxxx@xxx.xxx">
+                </div>
+                <div class="H_phone">
+                    <p>Phone number:</p>
+                    <input type="text" name="phone" id="phone" class="H_inpphone" onkeyup="buy()" pattern="^[0-9]{8,10}$" required placeholder="Input number only..." title="Phone number 9-11 character...">
+                </div>
+                <div class="H_date">
+                    <p>Date of department:</p>
+                    <input type="date" name="date" id="date" class="H_inpdate" onchange="buy()" required>
+                </div>
+                <div class="H_amount_price">
+                    <div class="H_amount">
+                        <p>Amount:</p>
+                        <input type="text" name="amount" id="amount" class="H_inpamount" onkeyup="buy()" pattern="^[1-9]$" required placeholder="Input number only...">
+                    </div>
+                    <div class="H_price">
+                        <p>Price:</p>
+                        <select name="price" id="price" class="H_select" onchange="buy()" required>
+                            <option hidden value="">Select price:</option>
+                            <option value="100">Normal: 100$</option>
+                            <option value="200">Special: 200$</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="H_info">
+                    <p>Booking information:</p>
+                    <div class="H_show" onkeyup="buy()">
+                        <p class="H_show1">This is your booking information, please confirm.</p>
+                        <p><b>Full name:</b><span class="H_show2"></span></p>
+                        <p><b>Email:</b><span class="H_show3"></span></p>
+                        <p><b>Phone number:</b><span class="H_show4"></span></p>
+                        <p><b>Date of department:</b><span class="H_show5"></span></p>
+                        <p><b>Amount:</b><span class="H_show6"></span></p>
+                        <p><b>Total:</b><span class="H_show7"></span></p>
+                    </div>
+                </div>
+                <div class="H_button">
+                    <button class="H_accept" type="submit">Accept</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-------------------- Footer -------------------->
+    <div class="tictle-end">
+        <p>SUBSCRIBE TO OUR NEWSLETTER</p>
+        <p>Sign up to receive updates on animals, news and events.</p>
+        <p><a href="#">Subscribe Today</a></p>
+    </div>
+    <!-- Contact -->
+    <div class="contact">
+        <div class="btn-contact">
+            <table class="table1">
+                <tr>
+                    <td><a href="../contact">Contact Us</a></td>
+                    <td></td>
+                    <td><a href="../ticket">Buy Tickets</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="icon">
+            <a href="#" class="facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+            <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" class="twiter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+            <a href="#" class="youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="address">
+        <p><i class="fa fa-copyright" aria-hidden="true"></i> 2020 National Aquarium</p>
+        <p>501 E Pratt St, Baltimore, MD 21202, USA</p>
+    </div>
+
+    <!-------------------- Script -------------------->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Menu Toggle -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".menu-toggle").click(function() {
+                $(".menu-toggle").toggleClass("active");
+                $("nav").toggleClass("active");
+            });
+        });
+    </script>
+    <!-- Scroll To Top -->
+    <a id="button"></a>
+    <script>
+        var btn = $('#button');
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 300) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+        btn.on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: 0
+            }, '300');
+        });
+    </script>
+    <script src="../scripts/index.js"></script>
+    <script src="../scripts/ticket.js"></script>
+    <script src="../scripts/submit.js"></script>
+</body>
+
+</html>
