@@ -68,10 +68,10 @@
             <p>Welcome to Aquarium Nexus</p>
         </div>
         <div class="H_form">
-            <form class="H_booking">
+            <form class="H_booking" onsubmit="ticket()">
                 <div class="H_name">
                     <p>Full name:</p>
-                    <input type="text" name="name" id="name" class="H_inpname" onkeyup="buy()" pattern="^[A-Z a-z]{2,}$" required placeholder="Input word only..." title="Your full name: greater than 2 character...">
+                    <input type="text" name="fullname" id="name" class="H_inpname" onkeyup="buy()" pattern="^[A-Z a-z]{2,}$" required placeholder="Input word only..." title="Your full name: greater than 2 character...">
                 </div>
                 <div class="H_mail">
                     <p>Email:</p>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="H_date">
                     <p>Date of department:</p>
-                    <input type="date" name="date" id="date" class="H_inpdate" onchange="buy()">
+                    <input type="date" name="date" id="date" class="H_inpdate" onchange="buy()" required>
                 </div>
                 <div class="H_amount_price">
                     <div class="H_amount">
@@ -92,11 +92,11 @@
                     </div>
                     <div class="H_price">
                         <p>Price:</p>
-                        <select name="price" id="price" class="H_select" onchange="buy()">
-              <option value="0">Select price:</option>
-              <option value="100" >Normal: 100$</option>
-              <option value="200" >Special: 200$</option>
-            </select>
+                        <select name="price" id="price" class="H_select" onchange="buy()" required>
+                            <option hidden value="">Select price:</option>
+                            <option value="100">Normal: 100$</option>
+                            <option value="200">Special: 200$</option>
+                        </select>
                     </div>
                 </div>
                 <div class="H_info">
@@ -112,7 +112,7 @@
                     </div>
                 </div>
                 <div class="H_button">
-                    <button class="H_accept" type="submit" onclick="buy()">Accept</button>
+                    <button class="H_accept" type="submit">Accept</button>
                 </div>
             </form>
         </div>
@@ -178,6 +178,7 @@
     </script>
     <script src="../scripts/index.js"></script>
     <script src="../scripts/ticket.js"></script>
+    <script src="../scripts/submit.js"></script>
 </body>
 
 </html>
