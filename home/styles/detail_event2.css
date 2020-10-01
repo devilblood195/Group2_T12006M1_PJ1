@@ -1,0 +1,37 @@
+.H_content
+{
+    display: flex;
+    margin: 0 0 0 0;
+    padding: 55px 35px 55px 35px ;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/event/photo-1561211919-1947abbbb35b.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.H_content img
+{
+    width: 100%;
+}
+.h_title h2
+{
+    font-size: 45px;
+    padding-right: 25px;
+    color: white;
+}
+.h_title p
+{
+    font-size: 30px;
+    padding-right: 25px;
+    color: white;
+    text-align: justify;
+    justify-content: inherit;
+}
+@media (max-width: 1200px)
+{
+    .H_content
+    {
+        display: block;
+    }
+}
